@@ -13,11 +13,19 @@ function clock(){
         return standIn;
     }
 
+    function toTwelve(hour){
+        if(hour > 12){
+            return hour - 12
+        }
+    }
+
     var hours = leadingZero(time.getHours()),
         minutes = leadingZero(time.getMinutes()),
         seconds = leadingZero(time.getSeconds());
 
-    document.querySelectorAll('.clock')[0].innerHTML = hours + ":" + minutes + ":" + seconds;
+
+
+    document.querySelectorAll('.clock')[0].innerHTML = toTwelve(hours) + ":" + minutes + ":" + seconds;
     setColor("#" + hours + minutes + seconds);
 
     document.getElementById('hexval').innerHTML = "#" + hours + minutes + seconds;
