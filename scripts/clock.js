@@ -24,7 +24,6 @@ function clock(){
         seconds = leadingZero(time.getSeconds());
 
 
-
     document.querySelectorAll('.clock')[0].innerHTML = toTwelve(hours) + ":" + minutes + ":" + seconds;
     setColor("#" + hours + minutes + seconds);
 
