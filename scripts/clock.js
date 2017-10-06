@@ -20,5 +20,7 @@ function clock(){
     document.querySelectorAll('.clock')[0].innerHTML = hours + ":" + minutes + ":" + seconds;
     setColor("#" + hours + minutes + seconds);
 
+    document.getElementById('hexval').innerHTML = "#" + hours + minutes + seconds;
+
 }
 setInterval(clock, 1000);

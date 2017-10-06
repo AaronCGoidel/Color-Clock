@@ -11,6 +11,11 @@ body {
     color: #ffffff;
 }
 
+.hexval{
+    font-size: 4em;
+    color: #ffffff;
+}
+
 .center {
     left: 50%;
     position: relative;
