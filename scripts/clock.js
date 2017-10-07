@@ -23,11 +23,18 @@ function clock(){
         minutes = leadingZero(time.getMinutes()),
         seconds = leadingZero(time.getSeconds());
 
+    if (hours >= 12){
+        meridiem = " PM";
+    }
+    else {
+        meridiem = " AM";
+    }
 
-    document.querySelectorAll('.clock')[0].innerHTML = toTwelve(hours) + ":" + minutes + ":" + seconds;
+
+    document.getElementsByClassName('clock')[0].innerHTML = toTwelve(hours) + ":" + minutes + ":" + seconds + meridiem;
     setColor("#" + hours + minutes + seconds);
 
-    document.getElementById('hexval').innerHTML = "#" + hours + minutes + seconds;
+    document.getElementsByClassName('hexval')[0].innerHTML = "#" + hours + minutes + seconds;
 
 }
 setInterval(clock, 1000);
