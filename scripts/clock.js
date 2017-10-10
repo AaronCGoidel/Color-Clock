@@ -18,10 +18,12 @@ function clock(){
             return hour - 12
         }else if(hour === '00'){
             return 12
+        }else{
+            return hour
         }
     }
 
-    var hours = leadingZero(time.getHours()),
+    var hours = time.getHours(),
         minutes = leadingZero(time.getMinutes()),
         seconds = leadingZero(time.getSeconds());
 
@@ -34,9 +36,9 @@ function clock(){
 
 
     document.getElementsByClassName('clock')[0].innerHTML = toTwelve(hours) + ":" + minutes + ":" + seconds + meridiem;
-    setColor("#" + hours + minutes + seconds);
+    setColor("#" + leadingZero(hours) + minutes + seconds);
 
-    document.getElementsByClassName('hexval')[0].innerHTML = "#" + hours + minutes + seconds;
+    document.getElementsByClassName('hexval')[0].innerHTML = "#" + leadingZero(hours) + minutes + seconds;
 
 }
 setInterval(clock, 1000);
